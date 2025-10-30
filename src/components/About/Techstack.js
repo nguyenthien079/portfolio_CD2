@@ -1,5 +1,5 @@
 import React from "react";
-import { Col, Row } from "react-bootstrap";
+import { Col, Row, ProgressBar } from "react-bootstrap";
 import { SiNextdotjs, SiSolidity } from "react-icons/si";
 import { FaRust } from "react-icons/fa";
 import Go from "../../Assets/TechIcons/go.svg";
@@ -26,16 +26,47 @@ import AWS from "../../Assets/TechIcons/AWS.svg";
 import Kafka from "../../Assets/TechIcons/Kafka.svg";
 
 function Techstack() {
+  const skills = [
+    { name: "C++", icon: C, level: 75 },
+    { name: "JavaScript", icon: Javascript, level: 90 },
+    { name: "TypeScript", icon: Typescript, level: 85 },
+    { name: "Go", icon: Go, level: 70 },
+    { name: "Node.js", icon: Node, level: 85 },
+    { name: "React.js", icon: ReactIcon, level: 90 },
+    { name: "MongoDB", icon: Mongo, level: 80 },
+    { name: "Redux", icon: Redux, level: 85 },
+    { name: "Next.js", icon: null, level: 80 },
+    { name: "Git", icon: Git, level: 90 },
+    { name: "Firebase", icon: Firebase, level: 85 },
+    { name: "Docker", icon: Docker, level: 75 },
+    { name: "Kubernetes", icon: Kubernates, level: 70 },
+    { name: "PostgreSQL", icon: SQL, level: 85 },
+    { name: "Python", icon: Python, level: 80 },
+    { name: "Java", icon: Java, level: 75 }
+  ];
+
   return (
     <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
-      <Col xs={4} md={2} className="tech-icons">
-        <img src={C} alt="C++" />
-        <div className="tech-icons-text">C++</div>
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <img src={Javascript} alt="javascript" />
-        <div className="tech-icons-text">Javascript</div>
-      </Col>
+      {skills.map((skill, index) => (
+        <Col xs={12} md={6} className="tech-icons mb-4" key={index}>
+          <div className="skill-item p-3">
+            <div className="d-flex align-items-center mb-2">
+              {skill.icon ? (
+                <img src={skill.icon} alt={skill.name} className="skill-icon me-2" />
+              ) : (
+                <SiNextdotjs className="skill-icon me-2" />
+              )}
+              <h5 className="mb-0">{skill.name}</h5>
+            </div>
+            <ProgressBar 
+              now={skill.level} 
+              label={`${skill.level}%`}
+              variant="success"
+              className="skill-progress"
+            />
+          </div>
+        </Col>
+      ))}
       <Col xs={4} md={2} className="tech-icons">
         <img src={Typescript} alt="typescript" />
         <div className="tech-icons-text">Javascript</div>
@@ -52,10 +83,7 @@ function Techstack() {
         <img src={ReactIcon} alt="react" />
         <div className="tech-icons-text">React.Js</div>
       </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiSolidity fontSize={"24px"} />
-        <div className="tech-icons-text">Solidity</div>
-      </Col>
+     
       <Col xs={4} md={2} className="tech-icons">
         <img src={Mongo} alt="mongoDb" />
         <div className="tech-icons-text">Mongo DB</div>
@@ -77,10 +105,7 @@ function Techstack() {
         <img src={Firebase} alt="firebase" />
         <div className="tech-icons-text">Firebase</div>
       </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <img src={Redis} alt="redis" />
-        <div className="tech-icons-text">Redis</div>
-      </Col>
+   
       <Col xs={4} md={2} className="tech-icons">
         <img src={Docker} alt="docker" />
         <div className="tech-icons-text">Docker</div>
@@ -103,10 +128,7 @@ function Techstack() {
         <img src={Java} alt="haskell" />
         <div className="tech-icons-text">Java</div>
       </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <img src={HaskellIcon} alt="haskell" />
-        <div className="tech-icons-text">Haskell</div>
-      </Col>
+
 
       <Col xs={4} md={2} className="tech-icons">
         <img src={Tailwind} alt="tailwind" />
@@ -123,20 +145,14 @@ function Techstack() {
         <div className="tech-icons-text">Postman</div>
       </Col>
 
-      <Col xs={4} md={2} className="tech-icons">
-        <FaRust fontSize={"24px"} />
-        <div className="tech-icons-text">Rust</div>
-      </Col>
+
 
       <Col xs={4} md={2} className="tech-icons">
         <img src={AWS} alt="Postman" className="tech-icon-images" />
         <div className="tech-icons-text">AWS</div>
       </Col>
 
-      <Col xs={4} md={2} className="tech-icons">
-        <img src={Kafka} alt="Kafka" className="tech-icon-images" />
-        <div className="tech-icons-text">Kafka</div>
-      </Col>
+  
     </Row>
   );
 }

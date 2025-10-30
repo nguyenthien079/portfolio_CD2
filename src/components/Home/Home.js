@@ -21,20 +21,43 @@ function Home() {
         <Container className="home-content">
           <Row>
             <Col md={7} className="home-header">
-              <h1 style={{ paddingBottom: 15 }} className="heading">
-                Hi There!{" "}
-                <span className="wave" role="img" aria-labelledby="wave">
-                  👋🏻
-                </span>
-              </h1>
-
-              <h1 className="heading-name">
-                I'M
-                <strong className="main-name"> SOUMYAJIT BEHERA</strong>
-              </h1>
-
-              <div style={{ padding: 50, textAlign: "left" }}>
-                <Type />
+              <div className="hero-content">
+                <h1 className="hero-title">
+                  Hello, I'm <span className="highlight">Tian</span>
+                  <span className="wave" role="img" aria-labelledby="wave">
+                    👋
+                  </span>
+                </h1>
+                <h2 className="hero-subtitle">
+                  Turning Vision Into Reality Through Code
+                </h2>
+                <div className="hero-type">
+                  <Type />
+                </div>
+                <div className="hero-buttons">
+                  <button 
+                    onClick={() => {
+                      document.getElementById("contact").scrollIntoView({ 
+                        behavior: "smooth",
+                        block: "start"
+                      });
+                    }} 
+                    className="btn btn-primary mr-3"
+                  >
+                    Get In Touch
+                  </button>
+                  <button 
+                    onClick={() => {
+                      document.getElementById("projects").scrollIntoView({ 
+                        behavior: "smooth",
+                        block: "start"
+                      });
+                    }} 
+                    className="btn btn-outline"
+                  >
+                    View My Work
+                  </button>
+                </div>
               </div>
             </Col>
 
@@ -61,7 +84,7 @@ function Home() {
             <ul className="home-about-social-links">
               <li className="social-icons">
                 <a
-                  href="https://github.com/soumyajit4419"
+                  href="https://github.com/nguyenthien079"
                   target="_blank"
                   rel="noreferrer"
                   className="icon-colour  home-social-icons"
@@ -69,29 +92,11 @@ function Home() {
                   <AiFillGithub />
                 </a>
               </li>
+             
+            
               <li className="social-icons">
                 <a
-                  href="https://twitter.com/Soumyajit4419"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="icon-colour  home-social-icons"
-                >
-                  <AiOutlineTwitter />
-                </a>
-              </li>
-              <li className="social-icons">
-                <a
-                  href="https://www.linkedin.com/in/soumyajit4419/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="icon-colour  home-social-icons"
-                >
-                  <FaLinkedinIn />
-                </a>
-              </li>
-              <li className="social-icons">
-                <a
-                  href="https://www.instagram.com/soumyajit4419"
+                  href="https://www.instagram.com/tian_nht"
                   target="_blank"
                   rel="noreferrer"
                   className="icon-colour home-social-icons"
